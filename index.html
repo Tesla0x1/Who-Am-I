@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0xT3sla | WhoAmI</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --main-color: #00ff41; /* أخضر التيرمينال */
+            --text-color: #e0e0e0;
+            --accent-color: #333;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .terminal-window {
+            background: #111;
+            border: 1px solid var(--accent-color);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background: #222;
+            padding: 10px;
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .red { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green { background: #27c93f; }
+
+        .content { padding: 40px; line-height: 1.8; }
+
+        h1 { color: var(--main-color); font-size: 2rem; margin-bottom: 5px; letter-spacing: 2px; }
+        
+        .command { color: #888; margin-bottom: 25px; font-size: 1.1rem; }
+        .command::before { content: "root@t3sla:~# "; color: var(--main-color); }
+
+        p { margin-bottom: 20px; }
+
+        .social-links { margin-top: 30px; border-top: 1px solid var(--accent-color); padding-top: 20px; }
+        
+        a { 
+            color: var(--main-color); 
+            text-decoration: none; 
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        a:hover { 
+            border: 1px solid var(--main-color);
+            background: rgba(0, 255, 65, 0.1);
+        }
+
+        .cursor { display: inline-block; width: 10px; height: 1.2rem; background: var(--main-color); animation: blink 1s infinite; vertical-align: middle; }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        .quote { font-style: italic; color: #666; font-size: 0.9rem; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+<div class="terminal-window">
+    <div class="terminal-header">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+    </div>
+    
+    <div class="content">
+        <h1>[ 0xT3sla ]</h1>
+        <div class="command">whoami</div>
+        
+        <p>Independent Security Researcher. Thinking outside the box to secure what's inside. Systematically analyzing, documenting, and breaking for a better defense.</p>
+
+        <div class="social-links">
+            <span>Connect: </span>
+            <a href="https://tryhackme.com/p/t3sla-0x0" target="_blank">TryHackMe</a> 
+            <a href="https://github.com/t3sla-0x0" target="_blank">GitHub</a>
+        </div>
+
+        <p class="quote">"If you want to find the secrets of the universe, think in terms of energy, frequency and vibration."</p>
+        
+        <br>
+        <p>Status: <span style="color: yellow;">Active Hunting...</span><span class="cursor"></span></p>
+    </div>
+</div>
+
+</body>
+</html>
