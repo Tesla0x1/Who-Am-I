@@ -30,5 +30,28 @@
 
  **To what kind of vulnerability is the application vulnerable?** *[SQLI]*
 
- ### Now We Try Login About Way FTP :
+ ### Now We Try Login  Way FTP :
+ 
+    ```
+      ftp 10.114.170.115
+           Connected to 10.114.170.115.
+           220 (vsFTPd 3.0.3)
+           Name (10.114.170.115:t3sla):
+           530 This FTP server is anonymous only.
+           ftp: Login failed
+         
+       👉 Try Login with anonymous 
+    ftp 10.114.170.115
+           Connected to 10.114.170.115.
+           220 (vsFTPd 3.0.3)
+           Name (10.114.170.115:t3sla): anonymous
+           230 Login successful.
+           Remote system type is UNIX.
+          Using binary mode to transfer files.  👉While you are trying to enter FTP, a specific file is being transferred, now how do we obtain this file 👈
+
+      🔦 Using Wget to get data transfer 
+    wget -m --no-passive   ftp://anonymous@10.114.170.115
+      we see name file == ForMitch.txt  💡 Point - The data in file it is Massage Directed to a person : The Name Person🕵 mitch 
+     
+    ```   
             
