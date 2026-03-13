@@ -17,20 +17,24 @@
             color: var(--text-color);
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
-            padding: 20px;
+            padding: 15px; 
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            height: 100vh; 
+            box-sizing: border-box;
+            overflow: hidden; 
         }
 
         .terminal-window {
             background: #111;
             border: 1px solid var(--accent-color);
             border-radius: 8px;
-            width: 100%;
-            max-width: 700px;
+            width: 100%; 
+            height: 100%; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
         }
 
@@ -47,34 +51,60 @@
         .yellow { background: #ffbd2e; }
         .green { background: #27c93f; }
 
-        .content { padding: 40px; line-height: 1.8; }
+        .content { 
+            padding: 10px 40px 20px 40px; 
+            line-height: 1.5; 
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
 
-        h1 { color: var(--main-color); font-size: 2rem; margin-bottom: 5px; letter-spacing: 2px; }
+        .top-section {
+            text-align: center;
+            margin-bottom: 5px; 
+        }
+
+        h1 { color: var(--main-color); font-size: 2.2rem; margin: 0; letter-spacing: 5px; text-transform: uppercase; }
+        h3 { color: var(--text-color); margin: 0 0 15px 0; font-weight: normal; opacity: 0.7; font-size: 0.95rem; }
         
-        .command { color: #888; margin-bottom: 25px; font-size: 1.1rem; }
-        .command::before { content: "root@t3sla:~# "; color: var(--main-color); }
+        .main-bio {
+            text-align: left;
+            margin-top: 0; 
+        }
 
-        p { margin-bottom: 20px; }
+        .command { color: #888; font-size: 1.1rem; margin-bottom: 5px; }
+        .command::before { content: "root@Tesla:~# "; color: var(--main-color); }
 
-        .social-links { margin-top: 30px; border-top: 1px solid var(--accent-color); padding-top: 20px; }
-        
-        a { 
+        .bio-text { 
+            font-size: 1.05rem; 
+            max-width: 95%; 
+            margin-left: 0; 
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+
+        .bottom-section {
+            margin-top: auto; 
+            border-top: 1px solid var(--accent-color);
+            padding: 12px 0;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .social-links a { 
             color: var(--main-color); 
             text-decoration: none; 
-            padding: 5px 10px;
-            border: 1px solid transparent;
-            transition: 0.3s;
+            margin-right: 15px;
         }
 
-        a:hover { 
-            border: 1px solid var(--main-color);
-            background: rgba(0, 255, 65, 0.1);
-        }
-
-        .cursor { display: inline-block; width: 10px; height: 1.2rem; background: var(--main-color); animation: blink 1s infinite; vertical-align: middle; }
+        .cursor { display: inline-block; width: 8px; height: 1rem; background: var(--main-color); animation: blink 1s infinite; vertical-align: middle; }
         @keyframes blink { 50% { opacity: 0; } }
 
-        .quote { font-style: italic; color: #666; font-size: 0.9rem; margin-top: 40px; }
+        .quote { font-style: italic; color: #555; text-align: center; flex-grow: 1; padding: 0 10px; }
+        .status-box { text-align: right; min-width: 150px; }
+        .status-text { color: yellow; }
     </style>
 </head>
 <body>
@@ -87,30 +117,33 @@
     </div>
     
     <div class="content">
-        <h1>[ 0xT3sla ]</h1>
-        <div class="command">whoami</div>
-        
-          <p>
-            <em>
-                I am a cybersecurity engineer and a student at University of the People, studying Computer Science. 
-                I work in penetration testing and security vulnerability research within systems. 
-                I strive to analyze and close vulnerabilities to ensure a more secure digital environment. 
-                I participate as a CTF player, developing my skills in analysis and offensive defense to tackle complex security challenges.
-                Additionally, I research cybersecurity issues and propose innovative solutions to enhance digital protection. 
-                I believe cybersecurity is not just about securing systems but also deeply understanding cyber threats and how to counter them effectively. 
-                My passion lies in identifying security weaknesses and developing new strategies to keep up with evolving threats, helping.
-            </em>
-        </p>
-        <div class="social-links">
-            <span>Connect: </span>
-            <a href="https://tryhackme.com/p/t3sla-0x0" target="_blank">TryHackMe</a> 
-            <a href="https://github.com/t3sla-0x0" target="_blank">GitHub</a>
+        <div class="top-section">
+            <h1>WHO AM I</h1>
+            <h3>Tesla #</h3>
         </div>
 
-        <p class="quote">"If you want to find the secrets of the universe, think in terms of energy, frequency and vibration."</p>
-        
-        <br>
-        <p>Status: <span style="color: yellow;">Active Hunting...</span><span class="cursor"></span></p>
+        <div class="main-bio">
+            <div class="command">whoami</div>
+            <div class="bio-text">
+                <em>
+                    I am a cybersecurity engineer and a student at University of the People, studying Computer Science. 
+                    <br>I work in penetration testing and security vulnerability research within systems.
+                </em>
+            </div>
+        </div>
+
+        <div class="bottom-section">
+            <div class="social-links">
+                <a href="https://x.com/Mohamed101Hamdi" target="_blank"> X </a> 
+                <a href="https://www.linkedin.com/in/tesla0x1/" target="_blank"> LinkedIn </a>
+            </div>
+
+            <div class="quote">" If You Can Pwn , You Can Own "</div>
+            
+            <div class="status-box">
+                Status: <span class="status-text">Active Hacking ..</span><span class="cursor"></span>
+            </div>
+        </div>
     </div>
 </div>
 
