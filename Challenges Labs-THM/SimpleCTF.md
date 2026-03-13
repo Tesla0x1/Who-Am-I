@@ -1,6 +1,8 @@
-#Simple CTF
+# Simple CTF - TryHackMe Writeup 🚩
+**Platform:** [TryHackMe](https://tryhackme.com/room/easyctf)
+**Difficulty:** Easy
 
-##Answer the questions below
+## Answer the questions below
   **How many services are running under port 1000?** *[2]*
       ``` sudo nmap -sV -p 1-1001 10.112.129.59
           PORT   STATE SERVICE VERSION
