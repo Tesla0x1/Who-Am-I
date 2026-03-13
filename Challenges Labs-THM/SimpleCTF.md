@@ -101,7 +101,13 @@
          3- in vim write 👉 :!/bin/sh
      ```
   **What's the root flag?** *[W3ll d0n3. You made it!]*
-
+       
+     ```
+      cd /root
+      cat root.txt
+      [W3ll d0n3. You made it!
+      ```
+--
 
 
                                                                  ```  ✍ Tesla    ```
